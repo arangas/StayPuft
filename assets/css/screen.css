@@ -309,7 +309,7 @@ blockquote cite a { font-weight: normal; }
 mark {
     background-color: #ffc336;
 }
-
+/* Using gist-embed
 code, tt {
     padding: 1px 3px;
     font-family: Inconsolata, Consolas, Monaco, 'Andale Mono', monospace, sans-serif;
@@ -343,7 +343,7 @@ pre code, tt {
     border: none;
     padding: 0;
 }
-
+*/
 kbd {
     display: inline-block;
     margin-bottom: 0.4em;
@@ -1088,15 +1088,15 @@ main
    ========================================================================== */
 
 /* Github */
-
 .gist table {
     margin: 0;
     font-size: 1.4rem;
 }
-
+.gist td {
+    line-height: 1.4;
+}
 .gist .line-number {
     min-width: 25px;
-    font-size: 1.1rem;
 }
 
 /* Pastebin */
