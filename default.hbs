@@ -13,7 +13,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="{{asset "/favicon.png"}}">
+    {{#if @blog.logo}}
+    <link rel="shortcut icon" href="{{@blog.logo}}">{{/if}}
 
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
@@ -24,21 +25,21 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-    <!--<link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />-->
-
-    {{> google-analytics}}
+    <!--
+    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+    -->
 </head>
 
 <body class="{{body_class}}">
 
-    <div id="sidebar" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+    <div id="sidebar" {{#if @blog.cover}} style="background-image: url({{@blog.cover}})" {{/if}}>
         <div id="sidebar-content" class="inner">
             {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
             <h2 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h2>
             <h3 class="blog-description">{{@blog.description}}</h3>
 
             <form id="search">
-                <input id="search-field" placeholder="Search"/>
+                <input id="search-field" placeholder="Search" />
             </form>
 
             <div id="sidebar-links">
@@ -58,8 +59,10 @@
 
             <footer class="site-footer">
                 <section class="copyright">{{> copyright}}</section>
-                <section class="poweredby">Proudly published with <a class="icon-ghost" href="https://ghost.org">Ghost</a></section>
-                <section class="theme-credits"><a href="https://github.com/dlecina/StayPuft">StayPuft theme</a> by David Lecina</section>
+                <section class="poweredby">
+                    <i class="icon-ghost"></i><a href="https://ghost.org">Ghost</a> -
+                    <a href="https://github.com/dlecina/StayPuft">StayPuft theme</a>
+                </section>
             </footer>
         </div>
     </div>
@@ -75,10 +78,14 @@
     {{ghost_foot}}
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <!--<script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>-->
+    <!--
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    -->
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-    <!--<script type="text/javascript" src="{{asset "js/prism-loader.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>-->
+    <!--
+    <script type="text/javascript" src="{{asset "js/prism-loader.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+    -->
     <script type="text/javascript" src="{{asset "js/gist-embed.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>
     <script>

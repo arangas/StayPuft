@@ -10,7 +10,6 @@ A fork of Casper, the default theme for [Ghost](https://github.com/tryghost/ghos
 * Support for [Font Awesome](https://github.com/FortAwesome/Font-Awesome).
 * Basic support for [slidr.js](https://github.com/bchanx/slidr).
 * Syntax highlighting using [Prism](https://github.com/LeaVerou/prism/).
-* [Google Analytics](http://www.google.com/analytics/).
 
 ## Demo
 
@@ -34,25 +33,27 @@ If the current version of StayPuft is not compatible with the version of Ghost y
 
 ## Installation
 
-* Clone this repository on your themes folder:
+* Clone this repository inside your themes folder:
 
 ```
 cd ghost/content/themes
 sudo git clone https://github.com/dlecina/StayPuft
 ```
 
-* **[Configure](#configuration) the theme.**
-* Restart Ghost.
-* Select the theme in your Settings page.
+* Copy all files in `partials` folder ending in `example` so they end in `hbs`:
 
-## Configuration
+```
+cd StayPuft/partials
+cp disqus.hbs.example disqus.hbs
+cp copyright.hbs.example copyright.hbs
+cp sidebar-external.hbs.example sidebar-external.hbs
+```
 
-* Replace `assets/favicon.png` with your own favicon, or remove for the default Ghost favicon.
 * Modify `partials/disqus.hbs` with your shortname.
-* Modify `partials/google-analytics.hbs` with your own snippet.
 * Replace `partials/copyright.hbs` with your own disclaimer.
 * Modify `partials/sidebar-external.hbs` with your own external links.
-* After configuration, you may have to restart for all changes to take place.
+* Restart Ghost.
+* Select the theme in your Settings page.
 
 ## Copyright & License
 
