@@ -13,7 +13,7 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="{{asset "/favicon.png"}}">
+    {{#if @blog.logo}}<link rel="shortcut icon" href="{{@blog.logo}}">{{/if}}
 
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
@@ -25,8 +25,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
-
-    {{> google-analytics}}
 </head>
 
 <body class="{{body_class}}">
@@ -58,8 +56,10 @@
 
             <footer class="site-footer">
                 <section class="copyright">{{> copyright}}</section>
-                <section class="poweredby">Proudly published with <a class="icon-ghost" href="https://ghost.org">Ghost</a></section>
-                <section class="theme-credits"><a href="https://github.com/dlecina/StayPuft">StayPuft theme</a> by David Lecina</section>
+                <section class="poweredby">
+                    <i class="icon-ghost"></i><a href="https://ghost.org">Ghost</a> -
+                    <a href="https://github.com/dlecina/StayPuft">StayPuft theme</a>
+                </section>
             </footer>
         </div>
     </div>
